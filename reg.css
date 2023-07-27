@@ -1,0 +1,78 @@
+*{
+    font-family: 'poppins' ,sans-serif;
+}body{
+    background-image: url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.box{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 90vh;
+}
+header{
+    color:burlywood;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0 5px 0;
+}
+.container{
+    width:300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+span{
+    color:aqua;
+    font-size:medium;
+    display: flex;
+    padding: 1px 0 1px 0;
+    position: relative;
+    right: -150px;
+}
+.input-field .input{
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color:gray;
+    font-size: 15px;
+    padding: 0 15px 0 10px;
+    background:white;
+}
+i{
+    position: relative;
+    top: -30px;
+    left: 290px;
+    color: black;
+}
+.submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background:blanchedalmond;
+    cursor: pointer;
+    transition: .3s ;
+}
+::-webkit-calendar-picker-indicator{
+    color: yellowgreen;
+    float:right;
+    border-width:75%;
+    cursor: pointer;
+}
+label a{
+    text-decoration: white;
+    color: white;
+    position: relative;
+    top: -30px;
+    left: 290px;
+}
