@@ -22,8 +22,7 @@ include "conn.php";
  $output = $conn->query($query);
  $output_of_rows = $output->fetch_assoc();
 if ($output->num_rows==1){
-    header("refresh:2;url=Admin_Table.php");
-    echo "login successful";
+    header("Location: admin.php");
 }
 else{
     header("refresh:3;url=Admin_Login.php");

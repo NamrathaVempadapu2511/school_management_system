@@ -10,7 +10,7 @@
   <style>
   .topnav {
   overflow: hidden;
-  background-color:Grey;
+  background-color:darkcyan;
   }
   .topnav a {
   float: left;
@@ -20,7 +20,7 @@
   font-size: 15px;
   }
   .topnav a:hover {
-  background-color: silver;
+  background-color: darkolivegreen;
   color: black;
   }
   footer {
@@ -38,39 +38,34 @@
   <a href="https://in.search.yahoo.com/search?fr=mcafee&type=E211IN885G0&p=gmail.com">Contact</a>
   <a href="https://www.ibm.com/about">About</a>
   </div>
-  <table class="table table-borderd">
+  <table class="table border=2 cellpadding=10 cellspacing=10">
     <thead>
-      <tr style='background:skyblue;color:whitesmoke'>
-        <th>Roll_no</th>
-        <th>Class</th>
-        <th>Student_name</th>
-        <th>Created_time</th>
-        <th>Created_by</th>
-        <th>Fee_details</th>
-        <th>Marks</th>
-        <th>Status</th>
+      <tr style='background:darkgoldenrod;color:white;border:2'>
+            <th>Roll_no</th>
+            <th>First_term</th>
+            <th>Second_term</th>
+            <th>Third_term</th>
+            <th>Created_time</th>
       </tr>
     </thead>
     <tbody>
     <?php
+    $Roll_no = $_GET["Roll_no"];
         include "conn.php";
-        $query = "SELECT * from student_creation";
+        $query = "SELECT * from fee_details where Roll_no='$Roll_no'";
         $query_output= $conn->query($query);
         while($row = $query_output->fetch_assoc()){
-        $Roll_no = $row['Roll_no'];
-        $Class = $row['Class'];
-        $Student_name = $row['Student_name'];
-        $Created_time = $row['Created_time'];
-        $Created_by = $row['Created_by'];
-        echo "<tr style='background:pink;color:green'>
+            $Roll_no = $row['Roll_no'];
+            $First_term = $row['First_term'];
+            $Second_term = $row['Second_term'];
+            $Third_term = $row['Third_term'];    
+            $Created_time = $row['Created_time'];
+            echo "<tr style='background:seashell;color:purple'>
                 <td>$Roll_no</td>
-                <td>$Class</td>
-                <td>$Student_name</td>
+                <td>$First_term</td>
+                <td>$Second_term</td>
+                <td>$Third_term</td>
                 <td>$Created_time</td>
-                <td>$Created_by</td>
-                <td><a href='update_user.php?Roll_no=$Roll_no'>Check_fee</a></td>
-                <td><a href='check_marks.php?Roll_no=$Roll_no'>Check_marks</a></td>
-                <td><a href='delete.php?Roll_no=$Roll_no'>Delete</a></td>
                 <tr>";
         }
     ?>

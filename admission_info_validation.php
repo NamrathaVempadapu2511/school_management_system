@@ -122,9 +122,10 @@
         </tr>
         <?php
         include "conn.php";
-        $query = "SELECT * from admission";
-        $query_output = $conn->query($query);
-        while ($row = $query_output->fetch_assoc()) {
+        $search=$_POST['search'];
+            $query = "SELECT * from admission where Student_name like '%$search%'";
+            $query_output = $conn->query($query);
+            while ($row = $query_output->fetch_assoc()) {
             $Student_name = $row['Student_name'];
             $Class = $row['Class'];
             $Mobilenumber = $row['Mobilenumber'];
@@ -142,9 +143,9 @@
                 <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Reject'><button>Reject</button></a></td>
                 <td><img src='Image/$student_image' title='$student_image' alt=''></td>
                 </tr>";
-        }
-        ?>
-    <div class ="footer">
+        }      
+?>
+<div class ="footer">
     <p>Author: Namratha Vempadapu<br>
     <a href="https://www.youtube.com/">@for any query</a></p>
     </div>

@@ -122,32 +122,33 @@
         </tr>
         <?php
         include "conn.php";
-        $query = "SELECT * from admission";
-        $query_output = $conn->query($query);
-        while ($row = $query_output->fetch_assoc()) {
-            $Student_name = $row['Student_name'];
-            $Class = $row['Class'];
-            $Mobilenumber = $row['Mobilenumber'];
-            $Email = $row['Email'];
-            $Created_time = $row['Created_time'];
-            $student_image = $Student_name . '.png';
-            echo "<tr>
-                <td>$Student_name</td>
+        $search=$_POST['search'];
+        $query = "SELECT * from student_creation";
+        $query_output= $conn->query($query);
+        while($row = $query_output->fetch_assoc()){
+        $Roll_no = $row['Roll_no'];
+        $Student_name = $row['Student_name'];
+        $Class = $row['Class'];
+        $Created_time = $row['Created_time'];
+        $Created_by = $row['Created_by'];
+        $Roll_no_image = $Roll_no.'.png';
+        echo "<tr style='background:seashell;color:purple'>
+                <td>$Roll_no</td>
                 <td>$Class</td>
-                <td>$Mobilenumber</td>
-                <td>$Email</td>
+                <td>$Student_name</td>
                 <td>$Created_time</td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Accept'><button>Accept</button></a></td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Pending'><button>Pending</button></a></td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Reject'><button>Reject</button></a></td>
-                <td><img src='Image/$student_image' title='$student_image' alt=''></td>
-                </tr>";
+                <td>$Created_by</td>
+                <td><a href='update_user.php?Roll_no=$Roll_no'>Check_fee</a></td>
+                <td><a href='check_marks.php?Roll_no=$Roll_no'>Check_marks</a></td>
+                <td><a href='delete.php?Roll_no=$Roll_no'>Delete</a></td>
+                <td><img src='Image/$Roll_no_image' width='100' height='100' title='$Roll_no_image' alt=''></td>
+                <tr>";
         }
         ?>
-    <div class ="footer">
+<div class ="footer">
     <p>Author: Namratha Vempadapu<br>
     <a href="https://www.youtube.com/">@for any query</a></p>
-    </div>
+</div>
 
 </body>
 

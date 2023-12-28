@@ -14,16 +14,16 @@ color:red;
 include "conn.php";
 include "date_and_time.php";
 $Roll_no = $_POST['Roll_no'];
-$First_term = $_POST['first_term'];
-$Second_term = $_POST['second_term'];
-$Third_term = $_POST['third_term'];    
+$First_term = $_POST['First_term'];
+$Second_term = $_POST['Second_term'];
+$Third_term = $_POST['Third_term'];    
 $Created_time = generate_time_id();
 $query = "SELECT * FROM student_creation where Roll_no = '$Roll_no'";
 $output = $conn->query($query);
 if ($row=$output->num_rows==1){
     $student_query = "INSERT INTO fee_details(Roll_no,First_term,Second_term,Third_term,Created_time) values('$Roll_no','$First_term','$Second_term','$Third_term','$Created_time')";
     if($conn->query($student_query)){
-        header("refresh:3;url=Employee.php");
+       // header("refresh:3;url=Employee.php");
         echo "Fee_details got registered successfully!";
     }
     else{

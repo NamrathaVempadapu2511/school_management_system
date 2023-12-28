@@ -13,6 +13,7 @@ color:red;
 <?php
 include "conn.php";
 $username = $_POST["username"];
+$Roll_no = $_POST["Roll_no"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $confirmpassword = $_POST["confirmpassword"];
@@ -26,7 +27,7 @@ if ($row=$output->num_rows == 1){
 else{
 if($password == $confirmpassword){
     $password=md5($password);
-    $query = "INSERT INTO student_reg(Username,Email,Password,Mobilenumber) values('$username','$email','$password',$mobile)";
+    $query = "INSERT INTO student_reg(Username,Roll_no,Email,Password,Mobilenumber) values('$username','$Roll_no','$email','$password','$mobile')";
     if($conn->query($query)){
         header("refresh:3;url=student_login.php");
         echo "Register successful!";

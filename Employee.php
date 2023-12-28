@@ -6,8 +6,13 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
+  background-image: url('http://getwallpapers.com/wallpaper/full/a/e/b/624292.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
 }
 
+/* Sidebar Styles */
 .sidebar {
   height: 100%;
   width: 0;
@@ -33,6 +38,7 @@ body {
 .sidebar a:hover {
   color: maroon;
 }
+
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -54,21 +60,7 @@ body {
   background-color: yellow;
 }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-body {
-  background-image: url('http://getwallpapers.com/wallpaper/full/a/e/b/624292.jpg');
-}
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-.active{
-  list-style:none;
-}
+/* Navigation Bar Styles */
 ul {
   list-style-type: none;
   margin: 0;
@@ -96,34 +88,47 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
+
+/* Main Content Styles */
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+h2 {
+  color: pink;
+  font-size: 45px;
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-  <a href="Admission_info.php">View_Admissions</a>
+  <a href="Admissioninfo_emp.php">View_Admissions</a>
   <a href="student_creation.php">Add Student</a>
   <a href="viewstudent.php">View Student</a>
   <a href="Updatemarks.php">Add_Marks</a>
-  <a href="#">View_Marks</a>
+  <a href="checkmarks.php">View_Marks</a>
   <a href="UpdateFee_details.php">Add_Fee_details</a>
-  <a href="#">View_Fee_details</a>
-</ul>
-</div>
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰ </button>
-  <ul style="float:right">
-  <li><a class="active" href="Employee.php">Home</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="home.php">Logout</a></li>
-</ul>
-</div>
-<div style="padding:220px 20px 10px 650px;color:pink;font-size:45px">
-  <h2>Welcome</h2>
+  <a href="checkfee_details.php">View_Fee_details</a>
 </div>
 
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <ul style="float:right">
+    <li><a class="active" href="Employee.php">Home</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="home.php">Logout</a></li>
+  </ul>
+
+  <div style="padding: 220px 20px 10px 650px;">
+    <h2>Welcome</h2>
+  </div>
+</div>
 
 <script>
 function openNav() {
@@ -136,6 +141,6 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-   
+
 </body>
-</html> 
+</html>

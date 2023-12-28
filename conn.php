@@ -8,4 +8,4 @@ $conn = new mysqli($server,$username,$password,$database);
   $error=$conn->connect_error;
   echo "Not connected due to:".$error;
  }
- ?>
+?>

@@ -16,10 +16,9 @@ include 'conn.php';
 
 $Roll_no = $_GET["Roll_no"];
 echo $Roll_no;
-echo "<br>";
-$query = "delete from createdtable where user_id='$User_id'";
+$query = "delete from student_creation where Roll_no='$Roll_no'";
 if($conn->query($query)){
-    header("refresh:3;url=Admin_Table.php");
+    header("refresh:3;url=Admin_studentinfo.php");
     echo "deleted successfully";
 }
 else{

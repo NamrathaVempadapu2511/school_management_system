@@ -11,19 +11,19 @@
     <style>
         .topnav {
             overflow: hidden;
-            background-color: darkgrey;
+            background-color: salmon;
         }
 
         .topnav a {
             float: left;
-            color: khaki;
+            color: white;
             text-align: center;
             padding: 15px 16px;
             font-size: 15px;
         }
 
         .topnav a:hover {
-            background-color: papayawhip;
+            background-color: orange;
             color: black;
         }
 
@@ -39,6 +39,13 @@
             -webkit-transform: rotate(135deg);
         }
 
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -52,13 +59,13 @@
         }
 
         th {
-            background-color: papayawhip;
+            background-color: lavenderblush;
             color: Palevioletred;
             height: 40px;
         }
 
         tr:nth-child(even) {
-            background-color: lavenderblush;
+            background-color: lightpink;
         }
 
         tr:hover {
@@ -84,40 +91,23 @@
             width: 150px;
             height: 150px;
         }
-        .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: darkgrey;
-   color: palevioletred;
-   text-align: center;}
     </style>
 </head>
 
 <body>
-    <div class="topnav" style="font-weight:bold">
+    <div class="topnav">
         <a class="active" href="Admission_info.php">Home</a>
         <a href="https://www.eenadu.net/">News</a>
         <a href="#">Contact</a>
         <a href="#">About</a>
-        <div>
-        <form method="post" action="admission_info_validation.php" style="float:right;padding:10px" enctype="multipart/form-data">
-        <input type="text" placeholder="Search data" name="search" id="search">
-        <button class="btn btn-primary" name="submit">search</button>
-        </form>
-        </div>
     </div>
     <table border="1" cellspacing="1" cellpadding="1" width="100%">
-        <tr>
+        <tr style='background:burlywood;color:Palevioletred;height:10px'>
             <th>Student_name</th>
             <th>Class</th>
             <th>Mobilenumber</th>
             <th>Email</th>
             <th>Created_time</th>
-            <th>Accept</th>
-            <th>Reject</th>
-            <th>Pending</th>
             <th>Image</th>
         </tr>
         <?php
@@ -137,17 +127,10 @@
                 <td>$Mobilenumber</td>
                 <td>$Email</td>
                 <td>$Created_time</td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Accept'><button>Accept</button></a></td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Pending'><button>Pending</button></a></td>
-                <td style='padding:16px'><a href='status.php?Student_name=$Student_name&status=Reject'><button>Reject</button></a></td>
                 <td><img src='Image/$student_image' title='$student_image' alt=''></td>
                 </tr>";
         }
         ?>
-    <div class ="footer">
-    <p>Author: Namratha Vempadapu<br>
-    <a href="https://www.youtube.com/">@for any query</a></p>
-    </div>
 
 </body>
 

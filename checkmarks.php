@@ -10,7 +10,7 @@
   <style>
   .topnav {
   overflow: hidden;
-  background-color:Grey;
+  background-color:darkcyan;
   }
   .topnav a {
   float: left;
@@ -20,7 +20,7 @@
   font-size: 15px;
   }
   .topnav a:hover {
-  background-color: silver;
+  background-color: darkolivegreen;
   color: black;
   }
   footer {
@@ -38,39 +38,42 @@
   <a href="https://in.search.yahoo.com/search?fr=mcafee&type=E211IN885G0&p=gmail.com">Contact</a>
   <a href="https://www.ibm.com/about">About</a>
   </div>
-  <table class="table table-borderd">
+  <table class="table border=2 cellpadding=10 cellspacing=10">
     <thead>
-      <tr style='background:skyblue;color:whitesmoke'>
-        <th>Roll_no</th>
-        <th>Class</th>
-        <th>Student_name</th>
-        <th>Created_time</th>
-        <th>Created_by</th>
-        <th>Fee_details</th>
-        <th>Marks</th>
-        <th>Status</th>
+      <tr style='background:darkgoldenrod;color:white;border:2'>
+            <th>Roll_no</th>
+            <th>English_marks</th>
+            <th>Maths_marks</th>
+            <th>Science_marks</th>
+            <th>Social_marks</th>
+            <th>Total_marks</th>
+            <th>Total_percentage</th>
+            <th>Created_time</th>
       </tr>
     </thead>
     <tbody>
     <?php
         include "conn.php";
-        $query = "SELECT * from student_creation";
+        $query = "SELECT * from marks";
         $query_output= $conn->query($query);
         while($row = $query_output->fetch_assoc()){
         $Roll_no = $row['Roll_no'];
-        $Class = $row['Class'];
-        $Student_name = $row['Student_name'];
+        $English_marks = $row['English'];
+        $Maths_marks = $row['Maths'];
+        $Science_marks = $row['Science'];    
+        $Social_marks = $row['Social'];
+        $Total_marks = $row['Total_marks'];
+        $Total_percentage = $row['Total_percentage'];
         $Created_time = $row['Created_time'];
-        $Created_by = $row['Created_by'];
-        echo "<tr style='background:pink;color:green'>
+        echo "<tr style='background:seashell;color:purple'>
                 <td>$Roll_no</td>
-                <td>$Class</td>
-                <td>$Student_name</td>
+                <td>$English_marks</td>
+                <td>$Maths_marks</td>
+                <td>$Science_marks</td>
+                <td>$Social_marks</td>
+                <td>$Total_marks</td>
+                <td>$Total_percentage</td>
                 <td>$Created_time</td>
-                <td>$Created_by</td>
-                <td><a href='update_user.php?Roll_no=$Roll_no'>Check_fee</a></td>
-                <td><a href='check_marks.php?Roll_no=$Roll_no'>Check_marks</a></td>
-                <td><a href='delete.php?Roll_no=$Roll_no'>Delete</a></td>
                 <tr>";
         }
     ?>

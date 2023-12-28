@@ -10,7 +10,7 @@
 <body>
     <div class="box">
     <div class="container">
-    <form method="post" action="Employee_Login_validation.php">
+    <form method="post" action="Employee_Login_validation.php" onsubmit="return validateForm()">
     <div class="top">
     <div class="input-field">
         <input type="email" class="input" placeholder="Enter email" name="email" id="email">
@@ -27,5 +27,19 @@
 </div>
 </div>
 </div>
+
+
+<script>
+  function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if (email === "" || password === "") {
+      alert("Please fill in all the fields.");
+      return false;
+    }
+    return true;
+  }
+</script>
+
 </body>
 </html>

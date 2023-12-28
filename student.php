@@ -102,10 +102,10 @@ li a:hover:not(.active) {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-  <a href="viewstudent.php">View Student</a>
+  <a href="student_view.php">View Student</a>
   <a href="#">View_Marks</a>
   <a href="#">View_Fee_details</a>
-  <a href="student_personal_details.php">Add MyDetails</a>
+  <a href="studentdetails.php">Add MyDetails</a>
 </ul>
 </div>
 <div id="main">

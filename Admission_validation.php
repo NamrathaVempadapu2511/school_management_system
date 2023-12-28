@@ -24,7 +24,7 @@ $Student_image = $Student_name.'.png';
 if($conn->query($student_query)){
     move_uploaded_file($_FILES['Image']['tmp_name'],"C:/xampp/htdocs/school_management_system/Image/$Student_image");
     echo "<script>alert('Image has been uploaded in the Folder')</script>";
-    //header("refresh:3;url=marks.php?Roll_no=$Roll_no");
+    header("refresh:2;url=home.php");
     echo "Register successful!";
 }
 else{

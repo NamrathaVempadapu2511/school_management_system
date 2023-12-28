@@ -21,7 +21,7 @@ $query = "SELECT * FROM Employee_reg where Email='$email'";
 $output = $conn->query($query);
 if ($row=$output->num_rows == 1){
     echo "Email already exists";
-    header("refresh:3;url=login.php");
+    header("refresh:3;url=Employee_login.php");
 }
 else{
 if($password == $confirmpassword){

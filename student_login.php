@@ -17,6 +17,10 @@
         <i class='bx bx-user'></i>
     </div>
     <div class="input-field">
+                <input type="text" class="input" placeholder="Roll_no" name="Roll_no" id="Roll_no">
+                <i class='bx bx-user'></i>
+    </div>
+    <div class="input-field">
         <input type="password" class="input" placeholder="password" name="password" id="password">
         <i class='bx bx-lock-alt'></i>
     </div>
